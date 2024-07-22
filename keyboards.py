@@ -48,3 +48,9 @@ async def show_cars():
     cursor.execute('SELECT * FROM cars')
     cars = cursor.fetchall()
     return cars
+
+mainn_menu = InlineKeyboardMarkup()
+
+mainn_menu.add(
+    InlineKeyboardButton(text="Markup",callback_data="cl_markup")
+)
