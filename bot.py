@@ -3,6 +3,8 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State,StatesGroup
 from keyboards import car_menu
+from token import API_TOKEN
+import telebot
 
 from datas import start_db,show_cars,add_car
 
@@ -15,8 +17,8 @@ class SellCar(StatesGroup):
     new = State()
     photo_car = State()
 
-api = '7355286497:UVa_P5fYM'
-bot = Bot(api)
+
+bot = telebot.TeleBot(API_TOKEN)
 storage = MemoryStorage()
 dp = Dispatcher(bot,storage=storage)
 
